@@ -6,6 +6,16 @@ public class Car {
     AeroKit aeroKit;
 
     public Car(Engine engine, Tyre tyre, AeroKit aeroKit) {
+        if (engine == null) {
+            throw new IllegalArgumentException("Engine cannot be null");
+        }
+        if (tyre == null) {
+            throw new IllegalArgumentException("Tyre cannot be null");
+        }
+        if (aeroKit == null) {
+            throw new IllegalArgumentException("AeroKit cannot be null");
+        }
+
         this.engine = engine;
         this.tyre = tyre;
         this.aeroKit = aeroKit;

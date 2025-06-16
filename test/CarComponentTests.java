@@ -7,13 +7,13 @@ public class CarComponentTests {
     public void testValidCarConfiguration() {
         Engine engine = EngineFactory.get("Turbocharged");
         Tyre tyre = TyreFactory.get("Soft");
-        AeroKit aeroKit = AeroKitFactory.get("Ground Effect Kit");
+        AeroKit aeroKit = AeroKitFactory.get("Extreme Aero Kit");
 
         Car car = new Car(engine, tyre, aeroKit);
 
         assertEquals("Turbocharged", car.getEngine().getType());
         assertEquals("Soft", car.getTyre().getType());
-        assertEquals("Ground Effect Kit", car.getAeroKit().getType());
+        assertEquals("Extreme Aero Kit", car.getAeroKit().getType());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class CarComponentTests {
 
     @Test
     public void testHandlingScoreCalculations() {
-        Engine engine = EngineFactory.get("Hybrid");
+        Engine engine = EngineFactory.get("Turbocharged");
         Tyre tyre = TyreFactory.get("Medium");
         AeroKit aeroKit = AeroKitFactory.get("Standard Kit");
 
@@ -81,9 +81,9 @@ public class CarComponentTests {
 
     @Test
     public void testCarTopSpeedEdgeCase() {
-        Engine engine = EngineFactory.get("Hybrid");
+        Engine engine = EngineFactory.get("Standard");
         Tyre tyre = TyreFactory.get("Hard");
-        AeroKit aeroKit = AeroKitFactory.get("High Downforce Kit");
+        AeroKit aeroKit = AeroKitFactory.get("Downforce-Focussed Kit");
 
         Car car = new Car(engine, tyre, aeroKit);
         assertTrue(car.getTopSpeed() >= 0);
@@ -102,9 +102,9 @@ public class CarComponentTests {
 
     @Test
     public void testTyreWearRateWithinBounds() {
-        Engine engine = EngineFactory.get("Hybrid");
+        Engine engine = EngineFactory.get("Standard");
         Tyre tyre = TyreFactory.get("Soft");
-        AeroKit aeroKit = AeroKitFactory.get("Ground Effect Kit");
+        AeroKit aeroKit = AeroKitFactory.get("Extreme Aero Kit");
 
         Car car = new Car(engine, tyre, aeroKit);
         double wear = car.getTyreWearRate();
@@ -124,8 +124,8 @@ public class CarComponentTests {
     @Test
     public void testMultipleAeroKitsAvailable() {
         assertNotNull(AeroKitFactory.get("Standard Kit"));
-        assertNotNull(AeroKitFactory.get("High Downforce Kit"));
-        assertNotNull(AeroKitFactory.get("Ground Effect Kit"));
+        assertNotNull(AeroKitFactory.get("Downforce-Focussed Kit"));
+        assertNotNull(AeroKitFactory.get("Extreme Aero Kit"));
     }
 
     @Test
