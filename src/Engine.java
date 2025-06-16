@@ -13,6 +13,10 @@ public class Engine {
         return power / 100.0;
     }
 
+    public String getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return String.format("%s Engine: Power=%d HP, Fuel Efficiency=%.1f km/l", type, power, fuelConsumptionKmpl);

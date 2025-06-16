@@ -21,4 +21,20 @@ public class AeroKit {
         return String.format("%s: Drag=%.2f, Downforce=%dkg, Top Speed=%dkm/h, Efficiency=%.1fkm/l, Cornering=%d",
                 name, dragCoefficient, downforceKg, topSpeedKmh, fuelEfficiencyKmpl, corneringRating);
     }
+
+    public String getType() {
+        return name;
+    }
+
+    public int getTopSpeed() {
+        return topSpeedKmh;
+    }
+
+    public double getFuelEfficiency() {
+        return fuelEfficiencyKmpl;
+    }
+
+    public int getDownforce() {
+        return downforceKg;
+    }
 }

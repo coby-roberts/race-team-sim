@@ -1,3 +1,5 @@
+import java.lang.reflect.AnnotatedType;
+
 public class Car {
     Engine engine;
     Tyre tyre;
@@ -50,5 +52,18 @@ public class Car {
                 aeroKit + "\n" +
                 String.format("Top Speed: %.1f km/h%nFuel Usage per km: %.3f L%nHandling Score: %.2f%nAcceleration Score: %.2f%nTyre Wear Rate: %.4f per km%n",
                         getTopSpeed(), getFuelUsagePerKm(), getHandlingScore(), getAcceleration(), getTyreWearRate());
+    }
+
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public Tyre getTyre() {
+        return tyre;
+    }
+
+    public AeroKit getAeroKit() {
+        return aeroKit;
     }
 }
